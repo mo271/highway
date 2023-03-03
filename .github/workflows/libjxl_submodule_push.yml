@@ -18,11 +18,10 @@ jobs:
           submodules: recursive
 
       - name: Pull & update highway
+        working-directory: ./libjxl/third_party/highway
         run: |
-          cd libjxl/third_party/
           git fetch origin
           git checkout origin/master
-          cd ../../
 
       - name: Commit
         run: |
