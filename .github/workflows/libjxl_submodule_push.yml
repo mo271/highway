@@ -12,7 +12,7 @@ jobs:
       - name: 'Cloning libjxl'
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ github.token }}
           repository: mo271/libjxl
           path: libjxl
           submodules: recursive
