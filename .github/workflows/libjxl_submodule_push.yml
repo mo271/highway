@@ -30,4 +30,4 @@ jobs:
           git config user.name "GitHub Actions - update submodules"
           git add --all
           git commit -m "Update highway submodule" || echo "No changes to commit"
-          git push HEAD:main_with_highway
+          git push origin HEAD:highway_test
