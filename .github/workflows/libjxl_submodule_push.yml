@@ -16,25 +16,13 @@ jobs:
           repository: mo271/libjxl
           path: libjxl
           submodules: recursive
-
-      - name: Pull & update highway
-        working-directory: ./libjxl/third_party/highway
         run: |
+          cd  ./libjxl/third_party/highway
           git fetch origin
           git checkout origin/master
-
-      - name: Commit
-        working-directory: ./libjxl
-        run: |
+          cd ../../
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions - update submodules"
           git add --all
           git commit -m "Update highway submodule" || echo "No changes to commit"
-      
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.LIBJXL_TOKEN }}
-          branch: highway_test
-          directory: ./libjxl
-          repository: mo271/libjxl
+          git push origin HEAD:highway_test
