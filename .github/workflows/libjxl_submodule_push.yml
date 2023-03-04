@@ -37,3 +37,4 @@ jobs:
           github_token: ${{ secrets.LIBJXL_TOKEN }}
           branch: highway_test
           directory: ./libjxl
+          repository: mo271/libjxl
