@@ -32,4 +32,5 @@ jobs:
           git config user.name "GitHub Actions - update submodules"
           git add --all
           git commit -m "Update highway submodule" || echo "No changes to commit"
-          git push origin HEAD:highway_test
+          git remote add origin_with_token https://user:$GITHUB_TOKEN@github.com/mo271/libjxl
+          git push origin_with_token HEAD:highway_test
