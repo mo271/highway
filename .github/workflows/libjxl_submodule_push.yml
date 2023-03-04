@@ -34,3 +34,10 @@ jobs:
           git commit -m "Update highway submodule" || echo "No changes to commit"
           git remote add origin_with_token https://user:$GITHUB_TOKEN@github.com/mo271/libjxl
           git push origin_with_token HEAD:highway_test
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.LIBJXL_TOKEN }}
+          branch: highway_test
+          directory: ./libjxl
